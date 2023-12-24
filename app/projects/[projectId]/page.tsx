@@ -1,3 +1,3 @@
 export default function ProjectDetailsPage() {
-  return <>Project details goes here</>;
+	return <>Project details goes here</>
 }

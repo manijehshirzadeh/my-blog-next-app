@@ -1,5 +1,5 @@
 function ContactPage() {
-  return <>this is contact page</>;
+	return <>this is contact page</>
 }
 
-export default ContactPage;
+export default ContactPage

@@ -1,3 +1,3 @@
 export default function AllProjectsPage() {
-  return <>All projects goes here</>;
+	return <>All projects goes here</>
 }
