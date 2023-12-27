@@ -1,3 +1,6 @@
+import { DUMMYـPROJECTS } from "@/mock-data"
+import FeaturedProjects from "../featured-projects"
+
 export default function AllProjectsPage() {
-	return <>All projects goes here</>
+	return <FeaturedProjects projects={DUMMYـPROJECTS} />
 }

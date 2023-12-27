@@ -1,11 +1,12 @@
 import Hero from "@/components/hero"
-import Projects from "@/components/projects"
+import FeaturedProjects from "./featured-projects"
+import { DUMMYـPROJECTS } from "@/mock-data"
 
 export default function Home() {
 	return (
 		<>
 			<Hero />
-			<Projects />
+			<FeaturedProjects projects={DUMMYـPROJECTS} />
 		</>
 	)
 }
