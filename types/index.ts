@@ -6,4 +6,8 @@ export type Project = {
 	slug: string
 	isFeatured: boolean
 	content: string
+	codeSnippet?: {
+		language: string
+		code: string
+	}
 }

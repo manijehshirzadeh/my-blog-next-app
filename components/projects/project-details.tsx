@@ -1,6 +1,8 @@
 import ProjectHeader from "./project-header"
 import classes from "./project-details.module.css"
 import { getProjectData } from "@/lib/projects-util"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 interface Props {
 	projectSlug: string
@@ -15,6 +17,14 @@ function ProjectDetails({ projectSlug }: Props) {
 		<article className={classes.content}>
 			<ProjectHeader title={project.title} image={imagePath} />
 			{project.content}
+			{project.codeSnippet && (
+				<SyntaxHighlighter
+					style={atomDark}
+					language={project.codeSnippet.language}
+				>
+					{project.codeSnippet.code}
+				</SyntaxHighlighter>
+			)}
 		</article>
 	)
 }

@@ -7,7 +7,11 @@ export const DUMMYـPROJECTS = [
 			"NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
 		date: "2022-02-10",
 		isFeatured: true,
-		content: "This is a sample content "
+		content: "This is a sample content ",
+		codeSnippet: {
+			language: "js",
+			code: "const basics = 'Okay, that should not be too difficult actually';\n	function printBasics() {\n		console.log(basics);\n} \nprintBasics();"
+		}
 	},
 	{
 		slug: "getting-started-with-nextjs2",
