@@ -1,6 +1,7 @@
-import { DUMMYـPROJECTS } from "@/mock-data"
 import FeaturedProjects from "../featured-projects"
+import { getAllProjects } from "@/lib/projects-util"
 
-export default function AllProjectsPage() {
-	return <FeaturedProjects projects={DUMMYـPROJECTS} />
+export default async function AllProjectsPage() {
+	const allProjects = await getAllProjects()
+	return <FeaturedProjects projects={allProjects} />
 }

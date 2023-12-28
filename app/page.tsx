@@ -1,12 +1,13 @@
 import Hero from "@/components/hero"
 import FeaturedProjects from "./featured-projects"
-import { DUMMYـPROJECTS } from "@/mock-data"
+import { getFeaturedProjects } from "@/lib/projects-util"
 
 export default function Home() {
+	const featuredProjects = getFeaturedProjects()
 	return (
 		<>
 			<Hero />
-			<FeaturedProjects projects={DUMMYـPROJECTS} />
+			{featuredProjects && <FeaturedProjects projects={featuredProjects} />}
 		</>
 	)
 }

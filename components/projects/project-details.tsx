@@ -1,21 +1,20 @@
 import ProjectHeader from "./project-header"
 import classes from "./project-details.module.css"
+import { getProjectData } from "@/lib/projects-util"
 
-const DUMMY_POST = {
-	slug: "getting-started-with-nextjs",
-	title: "Getting Started with NextJS  - by Manijeh",
-	image: "getting-started-nextjs.png",
-	date: "2022-02-10",
-	content: "# This is a first post"
+interface Props {
+	projectSlug: string
 }
 
-function ProjectDetails() {
-	const imagePath = `/images/projects/${DUMMY_POST.slug}/${DUMMY_POST.image}`
+function ProjectDetails({ projectSlug }: Props) {
+	const project = getProjectData(projectSlug)
+	if (!project) return <h1>There is no project with this name</h1>
+	const imagePath = `/images/projects/${project.slug}/${project.image}`
 
 	return (
 		<article className={classes.content}>
-			<ProjectHeader title={DUMMY_POST.title} image={imagePath} />
-			{DUMMY_POST.content}
+			<ProjectHeader title={project.title} image={imagePath} />
+			{project.content}
 		</article>
 	)
 }

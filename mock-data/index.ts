@@ -5,30 +5,38 @@ export const DUMMYـPROJECTS = [
 		image: "getting-started-nextjs.png",
 		excerpt:
 			"NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
-		date: "2022-02-10"
+		date: "2022-02-10",
+		isFeatured: true,
+		content: "This is a sample content "
 	},
 	{
 		slug: "getting-started-with-nextjs2",
-		title: "Getting Started with NextJS",
+		title: "Getting Started with NextJS 2",
 		image: "getting-started-nextjs.png",
 		excerpt:
 			"NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
-		date: "2022-02-10"
+		date: "2022-02-10",
+		isFeatured: true,
+		content: "This is a sample content 2"
 	},
 	{
 		slug: "getting-started-with-nextjs3",
-		title: "Getting Started with NextJS",
+		title: "Getting Started with NextJS 3",
 		image: "getting-started-nextjs.png",
 		excerpt:
 			"NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
-		date: "2022-02-10"
+		date: "2022-02-10",
+		isFeatured: true,
+		content: "This is a sample content 3"
 	},
 	{
 		slug: "getting-started-with-nextjs4",
-		title: "Getting Started with NextJS",
+		title: "Getting Started with NextJS 4",
 		image: "getting-started-nextjs.png",
 		excerpt:
 			"NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
-		date: "2022-02-10"
+		date: "2022-02-10",
+		isFeatured: true,
+		content: "This is a sample content 4"
 	}
 ]
