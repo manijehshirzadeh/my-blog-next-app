@@ -2,7 +2,20 @@ import { NextRequest } from "next/server"
 import { MongoClient } from "mongodb"
 
 export async function POST(request: NextRequest) {
+	const username = process.env.mongodb_username
+	const password = process.env.mongodb_password
+	const clusterName = process.env.mongodb_clustername
+	const databaseName = process.env.mongodb_database
+
 	const body = await request.json()
+	if (!username || !password || !clusterName || !databaseName) {
+		return new Response(
+			"Couldn't connect to the database! The USERNAME/PASSWORD are not set correctly.",
+			{
+				status: 500
+			}
+		)
+	}
 	if (
 		body &&
 		"email" in body &&
@@ -30,17 +43,13 @@ export async function POST(request: NextRequest) {
 				message: body.message,
 				id: ""
 			}
-			const username = process.env.mongodb_username
-				? encodeURIComponent(process.env.mongodb_username)
-				: ""
-			const password = process.env.mongodb_password
-				? encodeURIComponent(process.env.mongodb_password)
-				: ""
 
 			let client
 			try {
 				client = await MongoClient.connect(
-					`mongodb+srv://${username}:${password}@${process.env.mongodb_clustername}.aurgawe.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
+					`mongodb+srv://${encodeURIComponent(username)}:${encodeURIComponent(
+						1122334455
+					)}@${clusterName}.aurgawe.mongodb.net/${databaseName}?retryWrites=true&w=majority`
 				)
 			} catch (error) {
 				return new Response("Couldn't connect to the database!", {
