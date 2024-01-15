@@ -1,29 +1,93 @@
 "use client"
-import { FormEvent, useState } from "react"
+import { FormEvent, useEffect, useState } from "react"
+import Notification from "../notification"
 
 import classes from "./contact-form.module.css"
+
+async function sendContactData(contactDetails: {
+	email: string
+	name: string
+	message: string
+}) {
+	const response = await fetch("/api/contact", {
+		method: "POST",
+		body: JSON.stringify(contactDetails),
+		headers: {
+			"Content-Type": "application/json"
+		}
+	})
+
+	const data = await response.json()
+
+	if (!response.ok) {
+		throw new Error(data.message || "Something went wrong!")
+	}
+}
 
 function ContactForm() {
 	const [enteredEmail, setEnteredEmail] = useState("")
 	const [enteredName, setEnteredName] = useState("")
 	const [enteredMessage, setEnteredMessage] = useState("")
+	const [requestStatus, setRequestStatus] = useState<
+		"pending" | "success" | "error"
+	>()
+	const [requestError, setRequestError] = useState()
 
-	function sendMessageHandler(event: FormEvent) {
+	useEffect(() => {
+		if (requestStatus === "success" || requestStatus === "error") {
+			const timer = setTimeout(() => {
+				setRequestStatus(undefined)
+				setRequestError(undefined)
+			}, 3000)
+
+			return () => clearTimeout(timer)
+		}
+	}, [requestStatus])
+	async function sendMessageHandler(event: FormEvent) {
 		event.preventDefault()
 
 		// TODO: add client-side validation
+		setRequestStatus("pending")
 
-		fetch("/api/contact", {
-			method: "POST",
-			body: JSON.stringify({
+		try {
+			await sendContactData({
 				email: enteredEmail,
 				name: enteredName,
 				message: enteredMessage
-			}),
-			headers: {
-				"Content-Type": "application/json"
-			}
-		})
+			})
+			setRequestStatus("success")
+			setEnteredMessage("")
+			setEnteredEmail("")
+			setEnteredName("")
+		} catch (error: any) {
+			setRequestError(error)
+			setRequestStatus("error")
+		}
+	}
+	let notification
+
+	if (requestStatus === "pending") {
+		notification = {
+			status: "pending",
+			title: "Sending message...",
+			message: "Your message is on its way!"
+		}
+	}
+
+	if (requestStatus === "success") {
+		notification = {
+			status: "success",
+			title: "Success!",
+			message: "Message sent successfully!"
+		}
+	}
+
+	if (requestStatus === "error") {
+		notification = {
+			status: "error",
+			title: "Error!",
+			message: requestError
+		}
 	}
 
 	return (
@@ -67,6 +131,13 @@ function ContactForm() {
 					<button>Send Message</button>
 				</div>
 			</form>
+			{notification && (
+				<Notification
+					status={notification.status}
+					title={notification.title}
+					message={notification.message || ""}
+				/>
+			)}
 		</section>
 	)
 }
