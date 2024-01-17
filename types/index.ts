@@ -11,8 +11,8 @@ export type Project = {
 		code: string
 		description?: string
 	}
-	features?: [string]
+	features?: string[]
 	demoUrl?: string
 	gitHubUrl?: string
-	technologies?: [string]
+	technologies?: string[]
 }
