@@ -9,5 +9,10 @@ export type Project = {
 	codeSnippet?: {
 		language: string
 		code: string
+		description?: string
 	}
+	features?: [string]
+	demoUrl?: string
+	gitHubUrl?: string
+	technologies?: [string]
 }

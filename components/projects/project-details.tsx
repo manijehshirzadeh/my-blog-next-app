@@ -15,8 +15,25 @@ function ProjectDetails({ projectSlug }: Props) {
 
 	return (
 		<article className={classes.content}>
-			<ProjectHeader title={project.title} image={imagePath} />
-			{project.content}
+			<ProjectHeader
+				title={project.title}
+				image={imagePath}
+				demoUrl={project.demoUrl}
+				gitHubUrl={project.gitHubUrl}
+			/>
+			{project.technologies && (
+				<h4>Built by {project.technologies.toString()}</h4>
+			)}
+			{project.features && (
+				<>
+					<h3>Features</h3>
+					<ul>
+						{project.features.map(feature => (
+							<li key={feature}>{feature}</li>
+						))}
+					</ul>
+				</>
+			)}
 			{project.codeSnippet && (
 				<SyntaxHighlighter
 					style={atomDark}
