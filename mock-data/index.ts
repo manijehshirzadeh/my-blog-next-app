@@ -68,26 +68,26 @@ export const DUMMYـPROJECTS = [
 			"Deployed using vercel"
 		]
 	},
-	{
-		slug: "food-recipe",
-		title: "Food Recipe",
-		image: "index.png",
-		excerpt:
-			"Ruby on Rails backend + React frontend app to create / view food recipes.",
-		date: "2023-09-10",
-		isFeatured: true,
-		content: "This is a sample content 3",
-		technologies: ["Ruby on Rails", " React", " JavaScript", " Render"],
-		demoUrl: "https://mysite-q91f.onrender.com/",
-		gitHubUrl: "https://github.com/manijehshirzadeh/rails_react_recipe",
-		features: [
-			"Integrated React for the Views into a Ruby on Rails application.",
-			"Created a recipe model based on MVC paradigm, and migrated into the db.",
-			"Added CRUD operations into the controller for the recipe endpoint.",
-			"Seeded initial data into the db.",
-			"Prepared and Deployed using Render"
-		]
-	},
+	// {
+	// 	slug: "food-recipe",
+	// 	title: "Food Recipe",
+	// 	image: "index.png",
+	// 	excerpt:
+	// 		"Ruby on Rails backend + React frontend app to create / view food recipes.",
+	// 	date: "2023-09-10",
+	// 	isFeatured: true,
+	// 	content: "This is a sample content 3",
+	// 	technologies: ["Ruby on Rails", " React", " JavaScript", " Render"],
+	// 	demoUrl: "https://mysite-q91f.onrender.com/",
+	// 	gitHubUrl: "https://github.com/manijehshirzadeh/rails_react_recipe",
+	// 	features: [
+	// 		"Integrated React for the Views into a Ruby on Rails application.",
+	// 		"Created a recipe model based on MVC paradigm, and migrated into the db.",
+	// 		"Added CRUD operations into the controller for the recipe endpoint.",
+	// 		"Seeded initial data into the db.",
+	// 		"Prepared and Deployed using Render"
+	// 	]
+	// },
 	{
 		slug: "hcard-builder",
 		title: "hCard Builder",
