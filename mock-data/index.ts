@@ -1,5 +1,50 @@
 export const DUMMYـPROJECTS = [
 	{
+		slug: "local-market",
+		title: "Local Market",
+		image: "index.png",
+		excerpt: "The Local Market is where you list your stuff and sell them.",
+		date: "2024-07-12",
+		isFeatured: true,
+		demoUrl: "https://project-3-local-market-react.onrender.com/",
+		gitHubUrl:
+			"https://github.com/manijehshirzadeh/project-3-local-market-express",
+		features: [
+			"All the routes are protected , and only requests with a valid token from a signed in user is passed to the corresponding route",
+			"/signup and /signin with POST method is to sign in and sign up a new user",
+			"GET to /sign-token and POST to /verify-token are to sign and verify a recieved token",
+			"GET to /:userId will give the Profile of a User",
+			"/listings: Supports all CRUD operations for listings",
+			"/listings/:id: Supports all CRUD operations for a specific listing",
+			"/listings/:listingId/bids: Using POST to create a new BID for a specific listing",
+			"On this application, the users can list their items to sell them in the market. And others can make a bid on any listing to buy a listing",
+			"User authentication and authorization (Sign up, Sign in, Sign out)",
+			"Each user can create a Listing and upload image for the listing. They can also edit and delete their own listings.",
+			"Only singed in user can see ALL the listings in the website.",
+			"A guest user (user who doesn't sign in) can't see ALL the listings.",
+			"Display Date and Time for the Bids and Listings",
+			"Each user who is signed in, can also bid on other users' listings"
+		],
+		content:
+			"Built by NextJS, Filtering by Platform type, and sorting\n			Search box to search among the games\n			Infinite scrolling in the homepage for Games list\n			The Grid component used for the list is optimized for different screens, for responsiveness of the page\n			Click on a Game card, redirects to the Game info page which has games images and video trailer (if exits)\n			If the critics scode is less than 60, the badge is yellow and if higher it's green, indicating the popularity of the game\n			Click on a Game card, redirects to the Game info page (the game info page is not yet implemented)\n			If the rating of a game is less than 3, no emoji, if higher a specific emoji is shown depending on the value of 3, 4 or 5",
+		technologies: [
+			"React.js",
+			" Vite",
+			" React Router Dom",
+			" Cloudinary",
+			" Node.js",
+			" Express.js",
+			" MongoDB",
+			" JSON Web Token (JWT)",
+			" Mongoose",
+			" bcrypt",
+			" dotenv",
+			" cors",
+			"Render",
+			"Bootstrap"
+		]
+	},
+	{
 		slug: "post-hub",
 		title: "Post Hub",
 		image: "index.png",
