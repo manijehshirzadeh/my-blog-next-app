@@ -14,7 +14,7 @@ function Hero() {
 				/>
 			</div>
 			<h1>Hi, I am Manijeh</h1>
-			<p>I am building fullstack applications with NextJS</p>
+			<p>I am building fullstack applications with JavaScript</p>
 		</section>
 	)
 }
