@@ -1,5 +1,42 @@
 export const DUMMYـPROJECTS = [
 	{
+		slug: "my-network",
+		title: "My Network",
+		image: "index.png",
+		excerpt:
+			"The My Network app where users can connect to others, and share their ideas to others, and comment/edit/like/delete posts.",
+		date: "2024-08-01",
+		isFeatured: true,
+		demoUrl: "https://my-network-frontend.onrender.com/",
+		gitHubUrl: "https://github.com/manijehshirzadeh/my-network-frontend",
+		features: [
+			"This applicaiton is a clone of Facebook, in which the users can create/edit/delete a post, like a post, comment on a post.",
+			"Also, users can search among other users and send friend requests. The receiver of the friend request can accept it, so they become friends.",
+			"User authentication and authorization (Sign up, Sign in, Sign out)",
+			"Only singed in user can see ALL the posts in the website.",
+			"Display Date and Time for the Posts, Users and Comments"
+		],
+		content:
+			"Built by NextJS, Filtering by Platform type, and sorting\n			Search box to search among the games\n			Infinite scrolling in the homepage for Games list\n			The Grid component used for the list is optimized for different screens, for responsiveness of the page\n			Click on a Game card, redirects to the Game info page which has games images and video trailer (if exits)\n			If the critics scode is less than 60, the badge is yellow and if higher it's green, indicating the popularity of the game\n			Click on a Game card, redirects to the Game info page (the game info page is not yet implemented)\n			If the rating of a game is less than 3, no emoji, if higher a specific emoji is shown depending on the value of 3, 4 or 5",
+		technologies: [
+			"React.js",
+			"Material UI",
+			" Vite",
+			" React Router Dom",
+			" Cloudinary",
+			" Node.js",
+			" Express.js",
+			" MongoDB",
+			" JSON Web Token (JWT)",
+			" Mongoose",
+			" bcrypt",
+			" dotenv",
+			" cors",
+			" Render",
+			" Bootstrap"
+		]
+	},
+	{
 		slug: "local-market",
 		title: "Local Market",
 		image: "index.png",
@@ -40,8 +77,8 @@ export const DUMMYـPROJECTS = [
 			" bcrypt",
 			" dotenv",
 			" cors",
-			"Render",
-			"Bootstrap"
+			" Render",
+			" Bootstrap"
 		]
 	},
 	{
